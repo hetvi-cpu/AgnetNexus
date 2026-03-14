@@ -1,7 +1,7 @@
 // Automatically uses your Render backend URL in production
 // and localhost in development
 
-const BASE = import.meta.env.VITE_API_URL || 'http://localhost:3001'
+const BASE = import.meta.env.VITE_API_URL 
 
 export async function apiFetch(path, options = {}) {
   const res = await fetch(`${BASE}${path}`, {
