@@ -4,7 +4,7 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const allowedOrigins = [process.env.FRONTEND_URL, 'http://localhost:3000'].filter(Boolean)
+const allowedOrigins = [process.env.FRONTEND_URL, 'http://localhost:3001'].filter(Boolean)
 app.use(cors({ origin: (origin, cb) => { if (!origin || allowedOrigins.some(o => origin.startsWith(o)) || origin.endsWith('.vercel.app')) return cb(null, true); cb(new Error('CORS blocked: ' + origin)) }, credentials: true }))
 app.use(express.json());
 
